@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    // append
+    function newList(langname){
+        const temp = document.createElement('li');
+        temp.innerHTML = langname;
+        document.querySelector('.language').appendChild(temp);
+    }
+    newList("React");
+
+    // optimal append
+    function newOptiList(langname){
+        const temp = document.createElement('li');
+        temp.appendChild(document.createTextNode(langname));
+        document.querySelector('.language').appendChild(temp);
+    }
+    newOptiList("CSS");
+    newOptiList("HTML");
+
+    // Edit
+    const secondli = document.querySelector('li:nth-child(2)');
+    const newli = document.createElement('li');
+    newli.innerText = 'Mojo';
+    secondli.replaceWith(newli);
+
+    //remove
+    const removeLi = document.querySelector("li:nth-child(4)");
+    removeLi.remove();
+</script>
+</html>
